@@ -1,0 +1,80 @@
+.daftar-container {
+    max-width: 400px;
+    margin: 150px auto 40px;
+    padding: 30px 20px;
+    background-color: white;
+    border-radius: 12px;
+    text-align: center;
+    font-family: sans-serif;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.judul-daftar {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: black;
+}
+
+input,
+textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 12px;
+    border: none;
+    border-radius: 12px;
+    background-color: #CFCCC2;
+    font-size: 14px;
+    resize: none;
+}
+
+textarea {
+    height: 100px;
+}
+
+.button-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.daftar-button {
+    padding: 10px 20px;
+    background-color: #FFDC7F;
+    border: none;
+    border-radius: 60px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s ease;
+    width: 100%; 
+}
+
+.daftar-button:hover { 
+    opacity: 0.85;
+}
+
+.daftar-back-button { 
+    padding: 10px 20px;
+    background-color: #FFDC7F; 
+    border: none;
+    border-radius: 60px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s ease;
+    width: 100%; 
+}
+
+.daftar-back-button:hover {
+    opacity: 0.85;
+}
+
+.error-message {
+    color: red;
+    margin-bottom: 15px;
+}
+
+.success-message {
+    color: green;
+    margin-bottom: 15px;
+}

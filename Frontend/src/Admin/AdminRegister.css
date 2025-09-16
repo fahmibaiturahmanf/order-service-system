@@ -1,0 +1,104 @@
+.daftar-admin-container {
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    min-height: 100vh; 
+    background-color: #f0f0f0;
+    flex-direction: column; 
+    padding: 20px; 
+    box-sizing: border-box; 
+}
+
+.judul-daftar-admin {
+    font-size: 20px; 
+    font-weight: bold;
+    color: #333;
+    text-align: center;
+    margin-bottom: 15px; 
+}
+
+.daftar-admin-container form { 
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+    max-width: 400px; 
+    padding: 30px; 
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+
+.daftar-admin-container input,
+.daftar-admin-container textarea {
+    width: calc(100% - 24px); 
+    padding: 12px; 
+    border: 1px solid #ddd;
+    border-radius: 25px; 
+    font-size: 15px; 
+    box-sizing: border-box;
+}
+
+.daftar-admin-container textarea {
+    height: 90px; 
+    resize: vertical; 
+}
+
+.daftar-admin-container button,
+.daftar-admin-container a > button { 
+    width: 100%;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 25px; 
+    background-color: #FFDC7F;
+    color: #333; 
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    margin-top: 10px; 
+    text-align: center; 
+}
+
+.daftar-admin-container button:hover,
+.daftar-admin-container a > button:hover {
+    background-color: #e6b800; 
+    color: white; 
+    transform: translateY(-2px); 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.daftar-admin-container button:disabled {
+    background-color: #aaa;
+    cursor: not-allowed;
+}
+
+.daftar-admin-container .login-button {
+    border: 1px solid #FFDC7F; 
+    background-color: transparent; 
+    color: #FFDC7F; 
+}
+
+.daftar-admin-container .login-button:hover {
+    background-color: #e6b800; 
+    color: #fff; 
+}
+
+.daftar-admin-container .error-message { 
+    color: #e74c3c;
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 14px;
+    width: 100%;
+    max-width: 400px;
+}
+
+.daftar-admin-container .success-message { 
+    color: #28a745; 
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 14px;
+    width: 100%;
+    max-width: 400px;
+}

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rekap Pemesanan Bulan <%= month %> <%= year %></title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            color: #333;
+        }
+        h1, h2 {
+            text-align: center;
+            color: #0056b3;
+            margin-bottom: 5px;
+        }
+        h2 {
+            font-size: 1.2em;
+            margin-bottom: 20px;
+        }
+        h3 {
+            margin-top: 25px;
+            margin-bottom: 10px;
+            color: #444;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 15px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+            font-size: 0.9em;
+        }
+        th {
+            background-color: #f2f2f2;
+            font-weight: bold;
+        }
+        .daily-summary {
+            background-color: #e6f7ff;
+            font-weight: bold;
+        }
+        .total-summary {
+            text-align: right;
+            font-size: 1.3em;
+            margin-top: 30px;
+            padding-top: 10px;
+            border-top: 2px solid #0056b3;
+            font-weight: bold;
+        }
+        .total-summary span {
+            color: #d9534f;
+            font-weight: bold;
+        }
+        p.no-data {
+            text-align: center;
+            color: #666;
+            font-style: italic;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Rekap Pemesanan</h1>
+    <h2>Bulan <%= month %> Tahun <%= year %></h2>
+
+    <% if (rekapArray.length > 0) { %>
+        <% rekapArray.forEach(dailyRekap => { %>
+            <h3>Tanggal: <%= dailyRekap.date %></h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nama Pelanggan</th>
+                        <th>Jenis Jasa</th>
+                        <th>Harga Jasa</th>
+                        <th>Status Pemesanan</th>
+                        <th>Status Pembayaran</th>
+                        <th>Total</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% dailyRekap.dailyOrders.forEach(order => { %>
+                        <tr>
+                            <td><%= order.nama %></td>
+                            <td><%= order.jenis_jasa %></td>
+                            <td>Rp <%= order.harga_jasa.toLocaleString('id-ID') %></td>
+                            <td><%= order.status_pemesanan %></td>
+                            <td><%= order.status_pembayaran_detail %></td>
+                            <td>Rp <%= order.total.toLocaleString('id-ID') %></td>
+                        </tr>
+                    <% }); %>
+                    <tr class="daily-summary">
+                        <td colspan="5">Total Harian</td>
+                        <td>Rp <%= dailyRekap.dailyTotal.toLocaleString('id-ID') %></td>
+                    </tr>
+                </tbody>
+            </table>
+        <% }); %>
+
+        <div class="total-summary">
+            Total Omset Bulan Ini: <span>Rp <%= totalOmset.toLocaleString('id-ID') %></span>
+        </div>
+    <% } else { %>
+        <p class="no-data">Tidak ada data pemesanan untuk bulan ini.</p>
+    <% } %>
+</body>
+</html>

@@ -1,0 +1,5 @@
+export { default as Beranda } from './Beranda'
+export { default as Akun } from './Akun'
+export { default as Tentangkami } from './Tentangkami'
+export { default as Jasa } from './Jasa'
+export { default as Kontak } from './Kontak'

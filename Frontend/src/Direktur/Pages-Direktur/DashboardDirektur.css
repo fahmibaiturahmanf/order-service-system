@@ -1,0 +1,164 @@
+.dashboard-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px;
+    background-color: #f4f4f7;
+    min-height: calc(100vh - 60px);
+    box-sizing: border-box;
+}
+
+.dashboard-header {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #333;
+    font-size: 2em;
+    width: 100%;
+}
+
+.dashboard-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 25px;
+    margin-bottom: 40px;
+    width: 90%;
+    max-width: 1100px;
+}
+
+.dashboard-card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 25px;
+    text-align: center;
+    color: #555;
+    transition: transform 0.2s ease-in-out;
+}
+
+.dashboard-card:hover {
+    transform: translateY(-5px);
+}
+
+.card-value {
+    font-size: 3em;
+    font-weight: bold;
+    color: #007bff;
+    margin-bottom: 10px;
+}
+
+.card-label {
+    font-size: 1.1em;
+    color: #777;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.dashboard-charts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 30px;
+    margin-bottom: 40px;
+    width: 90%;
+    max-width: 1100px;
+}
+
+.chart-card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.chart-title {
+    font-size: 1.4em;
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.recharts-responsive-container {
+    width: 100% !important;
+    height: 300px !important;
+}
+
+.recent-orders-section {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 25px;
+    width: 90%;
+    max-width: 1100px;
+    overflow-x: auto;
+}
+
+.recent-orders-title {
+    font-size: 1.8em;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.recent-orders-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.95em;
+}
+
+.recent-orders-table th,
+.recent-orders-table td {
+    padding: 12px 15px;
+    border-bottom: 1px solid #eee;
+    text-align: left;
+}
+
+.recent-orders-table th {
+    font-weight: bold;
+    color: #333;
+    background-color: #f8f8f8;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.recent-orders-table tbody tr:hover {
+    background-color: #f0f0f0;
+}
+
+.error-message {
+    color: red;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 50px;
+    font-size: 1.2em;
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+    .dashboard-cards-grid,
+    .dashboard-charts-grid {
+        grid-template-columns: 1fr;
+        width: 95%;
+    }
+
+    .dashboard-header {
+        font-size: 1.8em;
+    }
+
+    .card-value {
+        font-size: 2em;
+    }
+
+    .card-label {
+        font-size: 0.9em;
+    }
+
+    .recent-orders-section {
+        width: 95%;
+    }
+
+    .recent-orders-table th,
+    .recent-orders-table td {
+        padding: 8px 10px;
+    }
+}

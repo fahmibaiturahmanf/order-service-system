@@ -1,0 +1,93 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background: #ffffff;
+}
+
+.konten {
+  height: 100vh;
+  margin-top: 60px;
+  margin-bottom: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.kartu {
+  width: 340px;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  background: #fff;
+}
+
+.reset-logo {
+  width: 271px;
+  height: 150px;
+  object-fit: contain;
+  margin-bottom: 25px; 
+}
+
+.banner {
+  margin-bottom: 20px; 
+  font-size: 20px;
+  font-weight: bold;
+  color: #333;
+}
+
+.pesan-instruksi {
+  color: #555;
+  font-size: 14px;
+  margin-bottom: 20px; 
+}
+
+.kelompok {
+  margin-top: 25px;
+  margin-bottom: 25px; 
+  text-align: center;
+}
+
+.kelompok label {
+  display: block;
+  font-size: 14px;
+  margin-bottom: 8px; 
+  color: #444;
+}
+
+.kelompok input {
+  width: 100%;
+  padding: 12px; 
+  border: none;
+  border-radius: 12px;
+  background: #d9d5cc;
+  font-size: 14px;
+}
+
+.kirim-button {
+  background-color: #FFDC7F;
+  border: none;
+  padding: 12px 20px; 
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: 600;
+  margin-top: 20px; 
+  transition: background-color 0.3s ease;
+}
+
+.kirim-button:hover {
+  background-color: #e6b800;
+}
+
+.pesan-sukses {
+  color: green;
+  font-size: 14px;
+  margin-top: 15px;
+}
+
+.pesan-error {
+  color: red;
+  font-size: 14px;
+  margin-top: 15px;
+}

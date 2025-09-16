@@ -1,0 +1,43 @@
+.introduction-section {
+    margin-top: 100px;
+    margin-bottom: 100px;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 60px 10%;
+    background-color: #fff;
+    gap: 40px;
+    flex-wrap: wrap;
+  }
+  
+  .intro-text {
+    flex: 1;
+    min-width: 300px;
+    max-width: 600px;
+  }
+  
+  .intro-text h3 {
+    font-size: 24px;
+    color: #03346E;
+    margin-bottom: 20px;
+  }
+  
+  .intro-text p {
+    font-size: 16px;
+    line-height: 1.7;
+    color: #444;
+    text-align: justify;
+  }
+  
+  .intro-image {
+    flex: 1;
+    min-width: 300px;
+  }
+    
+  .image-frame img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  

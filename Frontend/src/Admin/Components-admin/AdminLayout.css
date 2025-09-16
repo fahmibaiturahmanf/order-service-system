@@ -1,0 +1,46 @@
+.admin-layout {
+    display: flex;
+    min-height: 100vh; 
+    width: 100%; 
+}
+
+.admin-sidebar { 
+    width: 220px;
+    background-color: #0f172a;
+    min-height: 100vh; 
+    padding-top: 20px;
+    position: fixed; 
+    top: 0;        
+    left: 0;      
+    z-index: 1000;   
+    overflow-y: auto; 
+}
+
+.admin-content-wrapper {
+    flex: 1; 
+    display: flex;
+    flex-direction: column;
+    margin-left: 220px; 
+    background-color: #f4f4f7; 
+    overflow-y: auto; 
+    min-height: 100vh; 
+}
+
+.admin-main-content {
+    padding: 20px; 
+    flex-grow: 1;
+}
+
+/* Responsiveness untuk layar kecil */
+@media (max-width: 768px) {
+    .admin-sidebar {
+        width: 100%; 
+        height: auto; 
+        position: relative; 
+    }
+
+    .admin-content-wrapper {
+        margin-left: 0; 
+        width: 100%; 
+    }
+}

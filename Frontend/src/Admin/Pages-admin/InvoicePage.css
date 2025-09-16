@@ -1,0 +1,442 @@
+.invoice-container {
+    padding: 30px;
+    background-color: #f4f4f7;
+    min-height: calc(100vh - 60px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Arial', sans-serif;
+    color: #333;
+}
+
+.invoice-container h2 {
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 2.2em;
+    font-weight: bold;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 15px;
+}
+
+.loading-message, .error-message {
+    text-align: center;
+    font-size: 1.2em;
+    color: #555;
+    margin-top: 50px;
+    padding: 20px;
+    background-color: #ffe0b2;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.error-message {
+    background-color: #f8d7da;
+    color: #721c24;
+}
+
+/* Refresh Button */
+.refresh-button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    margin-bottom: 20px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.refresh-button:hover {
+    background-color: #0056b3;
+}
+
+.table-wrapper {
+    width: 90%;
+    max-width: 1200px;
+    overflow-x: auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    margin-bottom: 20px;
+}
+
+.invoice-table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 900px; 
+}
+
+.invoice-table th, .invoice-table td {
+    padding: 10px 8px;
+    border-bottom: 1px solid #eee;
+    text-align: left;
+    vertical-align: top;
+    font-size: 0.9em;
+}
+
+.invoice-table th {
+    background-color: #0f172a;
+    color: #fff;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 0.85em;
+    white-space: nowrap;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+.invoice-table tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.invoice-table tbody tr:hover {
+    background-color: #e9ecef;
+}
+
+/* Content within cells */
+.cell-content {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    line-height: 1.3;
+}
+
+.cell-content strong {
+    font-size: 1em;
+    color: #2c3e50;
+}
+
+.cell-content small {
+    font-size: 0.8em;
+    color: #666;
+}
+
+/* Link Bukti Bayar */
+.bukti-bayar-link {
+    color: #007bff;
+    text-decoration: underline;
+    font-size: 0.85em;
+    margin-top: 5px;
+    display: inline-block;
+}
+
+.bukti-bayar-link:hover {
+    color: #0056b3;
+}
+
+.view-invoice-link {
+    color: #007bff; 
+    text-decoration: underline; 
+    font-size: 0.85em;
+    margin-top: 5px;
+    display: inline-block;
+}
+
+.view-invoice-link:hover {
+    color: #0056b3; 
+}
+
+.status-badge {
+    font-size: 0.9em;
+    font-weight: bold;
+    background-color: transparent;
+    display: inline;
+    padding: 0;
+    border-radius: 0;
+    margin: 0;
+}
+
+/* Warna-warna Status */
+.menunggu-validasi { color: #ffc107; }
+.dikonfirmasi { color: #28a745; }
+.ditolak { color: #dc3545; }
+.pending { color: #6c757d; }
+.valid { color: #28a745; }
+.invalid { color: #dc3545; }
+.belum-ada-pembayaran { color: #6c757d; }
+.belum-dibayar { color: #17a2b8; }
+.dp-terbayar { color: #007bff; }
+.lunas { color: #28a745; }
+.diproses { color: #6f42c1; }
+.selesai { color: #20c997; }
+.error-fetching { color: #e0e0e0; }
+
+.aksi-buttons {
+    display: flex;
+    flex-direction: column;
+    row-gap: 8px;
+    align-items: flex-start;
+}
+
+.aksi-buttons button, .status-action {
+    padding: 7px 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.8em;
+    font-weight: bold;
+    text-align: center;
+    box-sizing: border-box;
+    transition: background-color 0.2s ease;
+}
+
+.aksi-buttons button {
+    margin-bottom: 5px;
+}
+
+.aksi-buttons button:last-child {
+    margin-bottom: 0;
+}
+
+/* Warna tombol aksi */
+.valid-button { background-color: #28a745; color: white; }
+.valid-button:hover { background-color: #218838; }
+
+.tolak-button { background-color: #dc3545; color: white; }
+.tolak-button:hover { background-color: #c82333; }
+
+.generate-invoice-button { background-color: #17a2b8; color: white; } 
+.generate-invoice-button:hover { background-color: #138496; }
+
+.aksi-buttons button:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+    color: #666666;
+}
+
+.status-action {
+    background-color: transparent;
+    cursor: default;
+    font-weight: bold;
+    font-size: 0.9em;
+    padding: 0;
+    border-radius: 0;
+    min-width: auto;
+    text-align: left;
+}
+
+.status-action.menunggu-validasi {
+    color: #ffc107; 
+}
+
+.status-action.dikonfirmasi {
+    color: #28a745; 
+}
+
+.status-action.ditolak {
+    color: #dc3545; 
+}
+
+.status-action.belum-bayar {
+    color: #6c757d;
+}
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+
+.modal-content {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    width: 400px;
+    text-align: center;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+}
+
+.modal-buttons {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.confirm-button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.confirm-button:hover {
+    background-color: #218838;
+}
+
+.cancel-button {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.cancel-button:hover {
+    background-color: #c82333;
+}
+
+/* Tombol untuk pembatalan pesanan */
+.batal-button {
+    background-color: #fd7e14;
+    color: white;
+    border: none;
+    padding: 7px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.8em;
+    font-weight: bold;
+    text-align: center;
+    box-sizing: border-box;
+    transition: background-color 0.2s ease;
+}
+
+.status-badge.dibatalkan {
+    background-color: #f44336;
+    color: white;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+.batal-button:hover {
+    background-color: #e8590c; 
+}
+
+/* 💡 Tambahan untuk alasan pembatalan admin */
+.pembatalan-section {
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #fffbea;
+    border: 1px solid #ffd966;
+    border-radius: 6px;
+}
+
+.alasan-box {
+    background-color: #fff4e5;
+    padding: 10px 12px;
+    margin-bottom: 10px;
+    border-left: 5px solid #ffa500;
+    border-radius: 4px;
+}
+
+.alasan-box strong {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 0.9em;
+    color: #b36b00;
+}
+
+.alasan-box p {
+    margin: 0;
+    font-size: 0.85em;
+    color: #5a5a5a;
+}
+
+.setujui-btn {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.8em;
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.setujui-btn:hover {
+    background-color: #218838;
+}
+
+.tolak-btn {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.8em;
+    font-weight: bold;
+}
+
+.tolak-btn:hover {
+    background-color: #c82333;
+}
+
+/* Responsif */
+@media (max-width: 1200px) {
+    .invoice-table {
+        min-width: 800px; 
+    }
+}
+
+@media (max-width: 992px) {
+    .invoice-container {
+        padding: 15px;
+    }
+    .invoice-table {
+        min-width: 700px;
+    }
+    .invoice-table th, .invoice-table td {
+        padding: 8px 6px;
+        font-size: 0.85em;
+    }
+    .invoice-table th {
+        font-size: 0.8em;
+    }
+    .status-badge {
+        font-size: 0.85em;
+        padding: 0;
+    }
+    .aksi-buttons button, .status-action {
+        min-width: 70px;
+        font-size: 0.75em;
+        padding: 5px 8px;
+    }
+}
+
+@media (max-width: 768px) {
+    .invoice-table {
+        min-width: 600px;
+    }
+}
+
+@media (max-width: 576px) {
+    .invoice-table {
+        min-width: 450px;
+    }
+    .invoice-table th, .invoice-table td {
+        padding: 6px 4px;
+        font-size: 0.8em;
+    }
+    .invoice-table th {
+        font-size: 0.75em;
+    }
+    .status-badge {
+        font-size: 0.8em;
+        padding: 0;
+    }
+    .aksi-buttons button, .status-action {
+        min-width: 60px;
+        font-size: 0.7em;
+        padding: 4px 6px;
+    }
+}

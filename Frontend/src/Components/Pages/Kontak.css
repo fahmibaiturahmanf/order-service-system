@@ -1,0 +1,105 @@
+.kontak-container {
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.kontak-overlay {
+  background-color: rgba(2, 21, 38, 0.95);
+  border-radius: 20px;
+  padding: 50px 60px;
+  max-width: 1000px;
+  width: 100%;
+  color: white;
+  text-align: center;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+  animation: fadeIn 0.6s ease-out;
+}
+
+.kontak-title {
+  font-size: 2rem;
+  margin-bottom: 40px;
+  color: #FFDC7F;
+  position: relative;
+}
+
+.kontak-title::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+  border-radius: 3px;
+}
+
+.kontak-items {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+}
+
+.kontak-item {
+  background-color: #0e213a;
+  border-radius: 16px;
+  padding: 30px 20px;
+  width: 260px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.kontak-item:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25);
+}
+
+.kontak-icon {
+  font-size: 36px;
+  margin-bottom: 15px;
+  color: #FFDC7F;
+}
+
+.kontak-label {
+  color: #e2e8f0;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .kontak-overlay {
+    padding: 30px 20px;
+  }
+
+  .kontak-items {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .kontak-title {
+    font-size: 1.6rem;
+  }
+
+  .kontak-item {
+    width: 100%;
+  }
+}

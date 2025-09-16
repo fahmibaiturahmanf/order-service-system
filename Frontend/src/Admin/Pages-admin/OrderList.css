@@ -1,0 +1,134 @@
+.order-list-container {
+    padding: 30px;
+    background-color: #f4f4f7; 
+    min-height: calc(100vh - 60px); 
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    font-family: 'Arial', sans-serif;
+    color: #333; 
+}
+
+.order-list-container h2 {
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 2.2em; 
+    font-weight: bold;
+    border-bottom: 2px solid #ddd; 
+    padding-bottom: 15px;
+    width: 80%;
+    max-width: 960px; 
+}
+
+/* Loading and Error messages */
+.order-list-loading, .order-list-error, .no-orders-found {
+    text-align: center;
+    font-size: 1.2em;
+    color: #555;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    margin-top: 20px; 
+}
+
+.order-list-error {
+    background-color: #f8d7da; 
+    color: #721c24; 
+}
+
+.table-wrapper {
+    width: 80%; 
+    max-width: 960px; 
+    overflow-x: auto; 
+    background-color: #fff;
+    border-radius: 8px; 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+    margin-bottom: 20px;
+}
+
+.order-list-table {
+    width: 100%; 
+    border-collapse: collapse;
+    min-width: 700px; 
+}
+
+.order-list-table th, .order-list-table td {
+    padding: 12px 15px; 
+    border-bottom: 1px solid #eee;
+    text-align: left;
+    font-size: 0.95em; 
+    white-space: nowrap; 
+}
+
+.order-list-table th {
+    background-color: #0f172a; 
+    color: #fff;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 0.85em; 
+}
+
+.order-list-table tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.order-list-table tbody tr:hover {
+    background-color: #e9ecef; 
+}
+
+.status-badge {
+    padding: 0; 
+    border-radius: 0;
+    font-weight: bold;
+    font-size: 0.95em; 
+    text-transform: capitalize; 
+    white-space: nowrap; 
+    display: inline-block; 
+    background-color: transparent !important; 
+    border: none !important; 
+}
+
+.menunggu-pembayaran { color: black !important;} 
+.dp-terbayar { color: black !important;} 
+.lunas { color: #2ecc71 !important;} 
+.diproses { color: black !important;} 
+.selesai { color: #27ae60 !important;} 
+.dibatalkan { color: #e74c3c !important;} 
+.menunggu-validasi { color: black !important;} 
+.ditolak { color: #dc3545 !important;} 
+
+/* Responsif */
+@media (max-width: 768px) {
+    .table-wrapper {
+        width: 95%; 
+    }
+    .order-list-table {
+        min-width: 600px; 
+    }
+    .order-list-table th, .order-list-table td {
+        padding: 8px 10px;
+        font-size: 0.9em;
+    }
+    .status-badge {
+        font-size: 0.9em; 
+    }
+}
+
+@media (max-width: 576px) {
+    .table-wrapper {
+        width: 100%; 
+    }
+    .order-list-table {
+        min-width: 500px; 
+    }
+    .order-list-table th, .order-list-table td {
+        padding: 6px 8px;
+        font-size: 0.8em;
+    }
+    .order-list-container h2 {
+        font-size: 1.8em;
+        width: 90%;
+    }
+}

@@ -1,0 +1,104 @@
+.jasa-container {
+    padding: 40px 60px;
+    background-color: #f9f9f9;
+    font-family: 'Poppins', sans-serif;
+}
+
+.jasa-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding-top: 100px; 
+}
+
+.jasa-heading .sub-title {
+    font-size: 14px;
+    color: black;
+    margin-bottom: 8px;
+}
+
+.jasa-heading .main-title {
+    font-size: 32px;
+    color: #03346E;
+    margin: 0;
+    font-weight: 700;
+}
+
+.jasa-heading .desc {
+    font-size: 16px;
+    color: #333;
+    margin-top: 10px;
+}
+
+.jasa-logo {
+    width: 380px;
+    height: 250px;
+    object-fit: contain;
+}
+
+.tombol-mesen1,
+.tombol-mesen2 {
+    display: flex !important;
+    justify-content: flex-end;
+    margin: 20px 0;
+}
+
+.btn-pesan { 
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    background-color: #FFDC7F;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-pesan:hover {
+    background-color: #e6b800;
+    transform: scale(1.05);
+    color: black;
+}
+
+.jasa-card {
+    background-color: #ffffff;
+    display: flex;
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    margin: 20px 0;
+    overflow: hidden;
+    padding: 20px;
+    align-items: flex-start;
+}
+
+.jasa-image {
+    width: 267px;
+    height: 170px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-right: 20px;
+}
+
+.jasa-text {
+    width: 100%;
+}
+
+.jasa-title {
+    font-size: 20px;
+    font-weight: 600;
+    color:#03346E;
+    margin: 0 0 10px 0;
+    text-align: left;
+}
+
+.jasa-desc {
+    font-size: 14px;
+    color: black;
+    margin-bottom: 10px;
+    text-align: justify;
+}
+
+.jasa-info {
+    font-size: 14px;
+    color: black;
+    line-height: 1.6;
+}

@@ -1,0 +1,107 @@
+.order-section1 {
+  margin-top: 200px;
+  margin-bottom: 100px;
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.order-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  z-index: 0;
+}
+
+/* Overlay transparan putih */
+.order-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.6);
+  z-index: 1;
+}
+
+.order-content {
+  position: relative;
+  z-index: 2;
+  background-color: #021526;
+  border-radius: 20px;
+  padding: 50px 60px;
+  display: flex;
+  align-items: center;
+  max-width: 800px;
+  width: 90%;
+  justify-content: space-between;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.order-left img {
+  height: 320px;
+  object-fit: contain;
+}
+
+.order-right {
+  margin-left: 40px;
+  color: white;
+  max-width: 400px;
+}
+
+.order-right h2 {
+  font-size: 28px;
+  font-weight: 700;
+  color: #FFDC7F;
+  margin-bottom: 10px;
+}
+
+.order-right h2 span {
+  color: #fff;
+}
+
+.order-right p {
+  margin-bottom: 20px;
+  font-size: 18px;
+  opacity: 0.9;
+}
+
+.order-right button {
+  padding: 10px 24px;
+  background-color: #FFDC7F;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: 600;
+  color: black;
+  transition: all 0.3s ease;
+}
+
+.order-right button:hover {
+  background-color: #e6b800;
+  transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+  .order-content {
+    flex-direction: column;
+    text-align: center;
+    padding: 40px 20px;
+  }
+
+  .order-left img {
+    height: 240px;
+    margin-bottom: 20px;
+  }
+
+  .order-right {
+    margin-left: 0;
+  }
+}

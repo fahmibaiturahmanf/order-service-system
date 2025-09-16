@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Invoice</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            color: #333;
+        }
+        .header {
+            display: flex; 
+            justify-content: space-between; 
+            align-items: flex-start; 
+            margin-bottom: 30px;
+            padding-bottom: 10px; 
+            border-bottom: 1px solid #eee; 
+        }
+        .header .logo-container {
+            flex-shrink: 0;
+            margin-right: 30px;
+        }
+        .header img {
+            max-width: 200px; 
+            height: auto;
+            display: block;
+        }
+        .header .company-info {
+            flex-grow: 1; 
+            text-align: right; 
+        }
+        .company-info h1 {
+            margin: 0;
+            color: #0056b3;
+            font-size: 1.8em; 
+        }
+        .company-info p {
+            margin: 2px 0;
+            font-size: 0.9em;
+        }
+
+        .invoice-title {
+            text-align: center;
+            font-size: 2.2em; 
+            margin-top: 30px; 
+            margin-bottom: 40px; 
+            color: #0056b3;
+            text-transform: uppercase; 
+        }
+
+        .details-section {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 30px;
+            padding-bottom: 10px;
+        }
+        .details-section div {
+            flex: 1;
+            padding-right: 20px;
+        }
+        .details-section p {
+            margin: 5px 0;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 30px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        .total-section {
+            text-align: right;
+            font-size: 1.2em;
+            margin-top: 20px;
+        }
+        .note {
+            margin-top: 50px;
+            font-size: 0.8em;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <!-- Tambahin container untuk ditunggu Puppeteer -->
+    <div id="invoice-container">
+        <div class="header">
+            <div class="logo-container">
+                <img src="<%= logoBase64 %>" alt="Logo PT. Eco Metalindo Indonesia">
+            </div>
+            <div class="company-info">
+                <h1>PT. Eco Metalindo Indonesia</h1>
+                <p>Bogor Center Point Blok C No.20</p>
+                <p>Cilendek Barat, Kec. Bogor Barat, Kota Bogor</p>
+                <p>Jawa Barat 16112</p>
+                <p>Telepon: 081318604050</p>
+                <p>Email: ecometalindo@gmail.com</p>
+            </div>
+        </div>
+
+        <div class="invoice-title">INVOICE PEMESANAN</div>
+
+        <div class="details-section">
+            <div>
+                <p><strong>INVOICE UNTUK:</strong></p>
+                <p><strong>Nama Pelanggan:</strong> <%= nama %></p>
+                <p><strong>Email:</strong> <%= email %></p>
+                <p><strong>No. Telepon:</strong> <%= no_telepon %></p>
+                <p><strong>Alamat:</strong> <%= alamat_user %></p>
+            </div>
+            <div>
+                <p><strong>DETAIL INVOICE:</strong></p>
+                <p><strong>Tanggal Invoice:</strong> <%= tanggal %></p>
+                <p><strong>Nomor Pemesanan:</strong> <%= nomor %></p>
+                <p><strong>Jenis Invoice:</strong> <%= jenis_invoice %></p>
+                <p><strong>Sisa Tagihan (Jika Ada):</strong> Rp. <%= sisa_tagihan.toLocaleString('id-ID') %></p>
+            </div>
+        </div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>No</th>
+                    <th>Nama Jasa</th>
+                    <th>Harga</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% if (pesanan && pesanan.length > 0) { %>
+                    <% pesanan.forEach((item, index) => { %>
+                        <tr>
+                            <td><%= index + 1 %></td>
+                            <td><%= item.nama_jasa %></td>
+                            <td>Rp. <%= item.harga.toLocaleString('id-ID') %></td>
+                        </tr>
+                    <% }) %>
+                <% } else { %>
+                    <tr>
+                        <td colspan="3" style="text-align: center;">Tidak ada detail pesanan.</td>
+                    </tr>
+                <% } %>
+            </tbody>
+        </table>
+
+        <div class="total-section">
+            <p><strong>Total Harga: Rp. <%= total %></strong></p>
+        </div>
+
+        <div class="note">
+            <p>Terima kasih telah menggunakan jasa kami. Pembayaran dapat dilakukan melalui transfer bank.</p>
+            <p>Hormat kami,</p>
+            <p>PT. Eco Metalindo Indonesia</p>
+        </div>
+    </div>
+</body>
+</html>

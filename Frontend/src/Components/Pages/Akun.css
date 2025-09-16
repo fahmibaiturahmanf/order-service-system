@@ -1,0 +1,144 @@
+.akun-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f0f2f5;
+    padding-top: 120px;
+    padding-bottom: 60px;
+    padding-left: 20px;
+    padding-right: 20px;
+    box-sizing: border-box;
+    overflow-y: auto;
+}
+
+.login-box {
+    background-color: #ffffff;
+    padding: 40px 30px;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.login-logo {
+    width: 250px;
+    height: auto;
+    object-fit: contain;
+    margin-bottom: 30px;
+}
+
+.login-form-content {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 18px;
+}
+
+.input-field {
+    width: 100%;
+    padding: 14px 20px;
+    border: 1px solid #e0e0e0;
+    border-radius: 28px;
+    background-color: #f8f8f8;
+    font-size: 16px;
+    color: #333;
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+}
+
+.input-field::placeholder {
+    color: #888;
+}
+
+.input-field:focus {
+    border-color: #FFDC7F;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(255, 220, 127, 0.5);
+}
+
+.error-message {
+    color: #e74c3c;
+    font-size: 14px;
+    text-align: center;
+    margin-bottom: 15px;
+    width: 100%;
+}
+
+.forgot-password {
+    text-align: center;
+    margin-top: -8px;
+    margin-bottom: 15px;
+    width: 100%;
+}
+
+.forgot-password span {
+    font-size: 14px;
+    color: #007bff;
+    text-decoration: none;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.forgot-password span:hover {
+    color: #0056b3;
+    text-decoration: underline;
+}
+
+.button-group-akun {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.button-group-akun button {
+    flex: 1;
+    padding: 14px 20px;
+    border: none;
+    border-radius: 28px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.button-group-akun button.tombol-reg {
+    background-color: #FFDC7F;
+    color: #333;
+}
+
+.button-group-akun button.tombol-log {
+    background-color: #FFDC7F;
+    color: #333;
+}
+
+.button-group-akun button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.button-group-akun button.tombol-reg:hover {
+    background-color: #e6b800;
+    color: #fff;
+}
+
+.button-group-akun button.tombol-log:hover {
+    background-color: #e6b800;
+    color: #fff;
+}
+
+.tombol-log:disabled {
+    background-color: #ccc;
+    color: #666;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}

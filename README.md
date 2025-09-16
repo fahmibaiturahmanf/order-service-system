@@ -34,8 +34,9 @@ Sistem ini menyediakan fitur:
 2. Setup Backend
  Masuk ke folder **Backend**:
    ```bash
-cd Backend - npm install. 
-Buat file .env di dalam folder Backend:
+   cd Backend - npm install.
+   
+3. Buat file .env di dalam folder Backend:
 PORT=5000
 MONGO_URI=mongodb://localhost:27017/order-service-system
 JWT_SECRET=your_jwt_secret

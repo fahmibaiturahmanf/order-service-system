@@ -55,15 +55,15 @@ Akun Dummy untuk Testing
 Untuk mempermudah pengujian, gunakan akun berikut:
 User
 Username: user1@gmail.com
-Password: 123456
+Password: 123
 
 Admin
 Username: admin1
-Password: 123456
+Password: 123
 
 Direktur
 Username: direktur1
-Password: 123456
+Password: 123
 
 Fitur Utama
 1. User :

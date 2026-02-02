@@ -81,7 +81,7 @@ Rekap data bulanan
 
 3. Direktur :
 Akses rekap pesanan bulanan
-Laporan keuangan berdasarkan status & tanggal selesa
+Laporan keuangan berdasarkan status & tanggal selesai
 
 
 
